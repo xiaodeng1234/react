@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
+import zhCN from 'antd/lib/locale-provider/zh_CN';
+import { LocaleProvider } from 'antd';
+//注意这个顺序上面两个引入的顺序不能弄反了
+import {  
   BrowserRouter as Router,
   Switch,
   Route,
@@ -17,7 +20,8 @@ import App from './App';
 import './index.less';
 
 ReactDOM.render(
-  <Router>
+  <LocaleProvider locale={zhCN}>
+    <Router>
     <Switch>
       <Route path="/admin" component={App} />
       <Route path="/login" component={Login} />
@@ -25,6 +29,7 @@ ReactDOM.render(
       <Redirect to="/admin" from="/" exact />
       <Redirect to="/404" />
     </Switch>
-  </Router>,
+  </Router>
+</LocaleProvider>,
   document.getElementById('root')
 );

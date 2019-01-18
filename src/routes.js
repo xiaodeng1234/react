@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/article/list',
     component: ArticleList,
-    title: '文章列表',
+    title: '二手书列表',
     isMenu: true,
     exact: false
   },

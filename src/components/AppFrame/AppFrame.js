@@ -25,16 +25,19 @@ class AppFrame extends Component {
     history.push(`${match.path}${key}`)
   }
   render() {
+    const defaultSelectedKey=[this.props.location.pathname.split('/').slice(2).join('/')];
+    console.log(defaultSelectedKey);
+    console.log(this.props,this.props.match.path)
     return (
       <Layout>
         <Header className="header">
-          <div className="cp-logo">COW+ 管理系统</div>
+          <div className="cp-logo">二手书管理系统</div>
         </Header>
         <Layout>
           <Sider width={200} style={{ background: '#fff' }}>
             <Menu
               mode="inline"
-              defaultSelectedKeys={[menus[0].path]}
+              defaultSelectedKeys={[`/${defaultSelectedKey[0]}`]}
               style={{ height: '100%', borderRight: 0 }}
               onClick={this.handleMenuClick}
             >
